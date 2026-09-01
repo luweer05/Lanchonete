@@ -1,30 +1,55 @@
+const botao = document.querySelector("button");
+const inputcodigo = document.getElementById("codigo");
+const inputQuantidade = document.getElementById("quantidade");
+const paragrafoResultado = document.getElementById("resultado");
 
-const botao = document.querySelector("button")
-const inputcodigo = document.getElementById("codigo")
-const inputQuantidade = document.getElementById("quantidade")
-const paragrafoResultado = document.getElementById("resultado")
-
-botao.addEventListener("click", calcularQuantidade)
+botao.addEventListener("click", calcularQuantidade);
 
 function calcularQuantidade() {
 
-    const codigo = inputcodigo.valueAsNumber
-    const quantidade = inputQuantidade.valueAsNumber
+    const codigo = inputcodigo.valueAsNumber;
+    const quantidade = inputQuantidade.valueAsNumber;
 
-  
+    let total;
 
-    if ( codigo = 1) {
+    if (codigo === 1) {
 
-        const total =  quantidade * 5
-
-        paragrafoResultado.textContent =
-            `Valor = ${troco.toFixed(2)}`
-
-    } else {
-
-        const total = quantidade - 5
+        total = quantidade * 5;
 
         paragrafoResultado.textContent =
-            `DINHEIRO INSUFICIENTE. FALTAM ${falta.toFixed(2)} REAIS`
+            `Valor = R$ ${total.toFixed(2)}`;
+
+    } else if (codigo === 2) {
+
+        total = quantidade * 3.5;
+
+        paragrafoResultado.textContent =
+            `Valor = R$ ${total.toFixed(2)}`;
+
+    } else if (codigo === 3) {
+
+        total = quantidade * 4.8;
+
+        paragrafoResultado.textContent =
+            `Valor = R$ ${total.toFixed(2)}`;
+
+    } else if (codigo === 4) {
+
+        total = quantidade * 8.90;
+
+        paragrafoResultado.textContent =
+            `Valor = R$ ${total.toFixed(2)}`;
+
+    } else if (codigo === 5) {
+
+        total = quantidade * 7.32;
+
+        paragrafoResultado.textContent =
+            `Valor = R$ ${total.toFixed(2)}`;
+
+    }  else {
+
+        paragrafoResultado.textContent =
+            "Código do produto inválido!";
     }
 }
